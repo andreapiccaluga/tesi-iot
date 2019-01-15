@@ -10,7 +10,7 @@
 	},
 	
 	"client": {
-		"host": "192.168.99.100",
+		"host": "10.0.103.20",
 		"port": 1883,
 		"username": "acme",
 		"password": "acme",
