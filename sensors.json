@@ -1,0 +1,30 @@
+{
+	"general": {
+		"min_hour": 7.0,
+		"max_hour": 14.0
+	},
+	
+	"topics": {
+		"root": "sensor",
+		"readings": "readings",
+		"commands": "commands",
+		"messages": "messages",
+		"alarms": "alarms"
+	},
+
+	"csv": {
+		"delimiter": ";",
+		"directory": "C:\\Users\\andrea.piccaluga\\Documents",
+		"min_temperature": "Minima",
+		"max_temperature": "Massima",
+		"other_sensors": ["Pioggia", "He-3 ppm", "K-40 bq-m3", "Be-7 bq-m3", "Co-60 bq-m3",
+			"Cs-134 bq-m3", "Cs-137 bq-m3", "I-131 bq-m3", "Ru-106 bq-m3"],
+		"good_ranges": [[0.0, 100.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0],
+			[0.0, 0.0], [0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
+	},
+
+	"sensors": {
+		"publish_interval_temperature": 60,
+		"publish_interval_other": 60
+	}
+}

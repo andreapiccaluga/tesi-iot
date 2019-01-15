@@ -1,0 +1,20 @@
+{
+	"general": {
+		"target_temperature": 20.0,
+		"good_range": [16.0, 24.0],
+		"variation_off": [0.02, 0.04],
+		"variation_on": [0.04, 0.08]
+	},
+	
+	"topics": {
+		"root": "conditioner",
+		"readings": "readings",
+		"commands": "commands",
+		"messages": "messages",
+		"alarms": "alarms"
+	},
+
+	"conditioners": {
+		"publish_interval": 60
+	}
+}
