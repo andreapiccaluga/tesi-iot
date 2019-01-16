@@ -8,7 +8,7 @@
 
 	"alarms": {
 		"check_interval": 2,
-		"trigger_chance_perimeter": 0.001,
-		"trigger_chance_volumetric": 0.01
+		"trigger_chance_perimeter": 0.002,
+		"trigger_chance_volumetric": 0.001
 	}
 }

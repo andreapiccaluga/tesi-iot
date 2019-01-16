@@ -69,8 +69,7 @@ class Alarm(common.IoTElement):
             self.logger.log("Parsing di stringa JSON fallito:\n%s" % payload, "error")
         else:
             if payload_obj.get("command"):
-                if payload_obj.get("command").lower() == "alarm_status":
-                    self.alarm_status = common.OnOffStatus(payload_obj.get("argument"))
+                # Non sono previsti comandi al momento.
                 self.publish_feedback(payload_obj)
 
     def loop(self):
@@ -79,9 +78,6 @@ class Alarm(common.IoTElement):
         while not self.thread.stopped:
             # Probabilità di scattare
             if random.random() < self.trigger_chance:
-                if self.alarm_status == common.OnOffStatus.ON:
-                    self.logger.log("Il sensore %s è scattato, e l'allarme è attivo!" % self.id)
-                    self.publish_alarm()
-                else:
-                    self.logger.log("Il sensore %s è scattato, ma l'allarme era inattivo." % self.id)
+                self.logger.log("Il sensore antintrusione %s è scattato!" % self.id)
+                self.publish_alarm()
             self.thread.wait(self.check_interval)
