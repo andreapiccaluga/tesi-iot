@@ -14,7 +14,7 @@
 
 	"csv": {
 		"delimiter": ";",
-		"directory": "/root/csv",
+		"directory": "./csv",
 		"min_temperature": "Minima",
 		"max_temperature": "Massima",
 		"other_sensors": ["Pioggia", "He-3 ppm", "K-40 bq-m3", "Be-7 bq-m3", "Co-60 bq-m3",
