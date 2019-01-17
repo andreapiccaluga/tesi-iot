@@ -5,6 +5,7 @@ case "$SCELTA1" in
 		if [ -z "$(apk -e info git)" ]; then
 			apk add git
 		fi
+		rm -rf app
 		git clone -b files-15012019 https://github.com/andreapiccaluga/tesi-iot ./app
 	;;
 esac
