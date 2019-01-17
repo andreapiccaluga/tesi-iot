@@ -29,3 +29,5 @@ read -p "Installare script di boot (s/N)? " SCELTA2
 case "$SCELTA2" in
 	s|S ) mv boot_script.sh /etc/profile.d/
 esac
+mv init.sh /root/
+cd /root
