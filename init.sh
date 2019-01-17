@@ -23,7 +23,7 @@ if [ "$HOSTNAME" != "cryo-vm" ]; then
 	rm sensors.json
 fi
 if [ "$HOSTNAME" != "elev-vm" ]; then
-	rm sensors.json
+	rm elevators.json
 fi
 read -p "Installare script di boot (s/N)? " SCELTA2
 case "$SCELTA2" in
