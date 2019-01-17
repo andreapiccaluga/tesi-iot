@@ -1,15 +1,30 @@
-git clone -b files-15012019 https://github.com/andreapiccaluga/tesi-iot .
+cd /root
+read -p "Riclonare da git (s/N)? " SCELTA1
+case "$SCELTA1" in
+	s|S )
+		if [ -z "$(apk -e info git)" ]; then
+			apk add git
+		fi
+		git clone -b files-15012019 https://github.com/andreapiccaluga/tesi-iot ./app
+	;;
+esac
+cd /root/app
 rm -rf node-red
-if [ $HOSTNAME -ne "alarm-vm" ]; then
+echo "Cancellazione dei file non pertinenti a $HOSTNAME."
+if [ "$HOSTNAME" != "alarm-vm" ]; then
 	rm alarms.json
 fi
-if [ $HOSTNAME -ne "climate-vm" ]; then
+if [ "$HOSTNAME" != "climate-vm" ]; then
 	rm conditioners.json
 fi
-if [ $HOSTNAME -ne "cryo-vm" ]; then
+if [ "$HOSTNAME" != "cryo-vm" ]; then
 	rm -rf csv
 	rm sensors.json
 fi
-if [ $HOSTNAME -ne "elev-vm" ]; then
+if [ "$HOSTNAME" != "elev-vm" ]; then
 	rm sensors.json
 fi
+read -p "Installare script di boot (s/N)? " SCELTA2
+case "$SCELTA2" in
+	s|S ) mv boot_script.sh /etc/profile.d/
+esac
